@@ -1,3 +1,4 @@
+import torch
 from torch import nn
 
 
@@ -10,7 +11,7 @@ class Net(nn.Module):
     def forward(self, x):
         x = self.linear(x)
         x = self.relu(x)
-        x = x.sum(dim=1)
+        x = torch.norm(x, p=1, dim=1)
         return x
 
 
@@ -24,5 +25,5 @@ class ResnetNet(nn.Module):
         x = self.linear(input)
         x = self.relu(x)
         x = x + input
-        x = x.sum(dim=1)
+        x = torch.norm(x, p=1, dim=1)
         return x
