@@ -11,3 +11,8 @@ def init_weights(model, size=100):
 
 def create_input(dim, size=100):
     return torch.FloatTensor(dim, size).normal_()
+
+
+def create_labels(model, n, size=100):
+    x = create_input(n, size=size)
+    return model(x)
