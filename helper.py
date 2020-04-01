@@ -11,4 +11,4 @@ np.linalg.norm(W)
 
 x = np.random.normal(1,1,in_dim)
 x = x/np.linalg.norm(x)
-np.linalg.norm(x)
+np.linalg.norm(x)h
